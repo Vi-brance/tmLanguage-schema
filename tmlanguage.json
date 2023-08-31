@@ -86,15 +86,20 @@
         },
         "include": {
           "description": "this allows you to reference a different language, recursively reference the grammar itself or a rule declared in this file’s repository.",
-          "anyOf": [
-            { "type": "string" },
+          "oneOf": [
             {
-              "const": "$self",
+              "type": "string",
+              "description": "to reference another language, use the scope name of that language.",
+              "pattern": "^(text|source)(\\.[\\w\\d-]+)+$"
+            },
+            {
+              "type": "string",
+              "pattern": "^\\$self$",
               "description": "to reference the grammar itself."
             },
             {
               "type": "string",
-              "pattern": "^#",
+              "pattern": "^#.+$",
               "description": "to reference a rule from the current grammars repository."
             }
           ]
