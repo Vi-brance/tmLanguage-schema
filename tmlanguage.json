@@ -114,7 +114,9 @@
         }
       },
       "dependencies": {
-        "captures": ["match"],
+        "captures": {
+          "oneOf": [{ "required": ["match"] }, { "required": ["begin"] }]
+        },
         "begin": {
           "oneOf": [{ "required": ["end"] }, { "required": ["while"] }]
         },
