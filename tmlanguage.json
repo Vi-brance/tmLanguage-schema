@@ -108,8 +108,8 @@
           "description": "this key is similar to the name key but only assigns the name to the text between what is matched by the begin/end patterns."
         },
         "applyEndPatternLast": {
-          "type": "boolean",
-          "default": "false",
+          "type": "integer",
+          "enum": [0, 1],
           "description": ""
         }
       },
